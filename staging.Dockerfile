@@ -4,7 +4,7 @@ LABEL author="Mauricio Benitez"
 
 ENV NODE_ENV="development"
 
-EXPOSE 3000
+EXPOSE 8000
 
 ARG WORKING_DIRECTORY=/usr/src/app
 
