@@ -1,0 +1,31 @@
+version: '3.7'
+
+networks:
+  restaurantNetwork:
+    driver: bridge
+
+services:
+  api:
+    container_name: restaurantApi
+    env_file:
+      - api.env
+    image: restaurant-backend
+    build:
+      context: .
+      dockerfile: staging.Dockerfile
+    ports:
+      - "8000:3000"
+    networks:
+      - restaurantNetwork
+    depends_on:
+      - dbContainer
+
+  dbContainer:
+    env_file:
+      - db.env
+    build:
+      context: .
+    container_name: dbContainer
+    image: postgres:latest
+    networks:
+      - restaurantNetwork
