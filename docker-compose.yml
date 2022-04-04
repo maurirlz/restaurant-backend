@@ -22,7 +22,7 @@ services:
     depends_on:
       - dbContainer
 
-  dbContainer:
+  db:
     <<: *default
     build:
       context: .
