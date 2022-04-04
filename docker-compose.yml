@@ -12,7 +12,8 @@ services:
     image: restaurant-backend
     build:
       context: .
-      dockerfile: staging.Dockerfile
+      target: development
+      dockerfile: Dockerfile
     ports:
       - "8000:3000"
     networks:
