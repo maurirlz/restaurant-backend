@@ -13,14 +13,14 @@ x-function: &default
 services:
   api:
     <<: *default
-    container_name: restaurantApi
+    container_name: apiContainer
     build:
       context: .
       dockerfile: ./Dockerfile
     ports:
       - "8000:3000"
     depends_on:
-      - dbContainer
+      - db
 
   db:
     <<: *default
