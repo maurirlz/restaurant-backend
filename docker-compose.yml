@@ -5,6 +5,8 @@ networks:
     driver: bridge
 
 x-function: &default
+  restart: always
+  init: true
   networks:
    - restaurantNetwork
   env_file:
@@ -13,6 +15,7 @@ x-function: &default
 services:
   api:
     <<: *default
+    command: ${DOCKER_COMPOSE_COMMAND}
     container_name: apiContainer
     build:
       context: .

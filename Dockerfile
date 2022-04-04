@@ -12,4 +12,5 @@ WORKDIR $WORKING_DIRECTORY
 
 RUN npm install
 
-ENTRYPOINT ["npm", "run", "start:dev"]
+#ENTRYPOINT ["npm", "run", "start:dev"]
+ENTRYPOINT ["npm", "run"]
