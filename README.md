@@ -20,3 +20,4 @@
 - Volumes
 - Swagger
 - Redis integration
+- Elastic search
