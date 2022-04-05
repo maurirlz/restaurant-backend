@@ -13,11 +13,14 @@ x-function: &default
     - .env
 
 services:
+  db:
+    <<: *default
+    image: postgres:latest
+
   api:
     <<: *default
     command: ${DOCKER_COMPOSE_COMMAND}
     container_name: apiContainer
-    image: maurirlz/restaurant_api
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -25,10 +28,3 @@ services:
       - ${HOST_PORT}:${API_CONTAINER_PORT}
     depends_on:
       - db
-
-  db:
-    <<: *default
-    build:
-      context: .
-    container_name: dbContainer
-    image: maurirlz/restaurant_db_pg

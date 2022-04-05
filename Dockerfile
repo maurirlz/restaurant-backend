@@ -1,4 +1,6 @@
-FROM node:current-alpine
+FROM cimg/node:lts
+
+USER root
 
 LABEL author="Mauricio Benitez"
 
